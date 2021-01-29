@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Calculator</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#circle{
+			position: absolute;
+			left: 35%;
+			top: 5%;
+			width: 10%;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<h1>Calculator for circle area</h1>
+	<p>The circle area can be calculated by the following formula:</p>
+	<img src="suprfcercului.png">
+	<br>
+	<img id="circle" src="circle.jpg">
+	<br>
+	<p>The value of PI constant: π = 3.14</p>
+	<br>
+
+	<label for="textInput">Please type the circle radius:</label>
+	<input type="text" id="textInput">
+
+
+	<button id="button1">Calculate</button>
+
+	<p id="someParagraph"></p>
+
+	
+
+	<script type="text/javascript">
+
+		const PI = 3.14;
+		document.getElementById("button1").onclick = function(){
+			var radius ="";
+			radius = document.getElementById("textInput").value;
+
+			if(radius < 0){
+				alert("The radius cannot be a negative number");
+			}
+			else if(isNaN(radius)){  
+				alert("You have typed an incorrect value, please try again");
+			}
+			else if(radius == ""){
+				alert("Please enter a value for the radius");
+			}
+			else{
+				var area = PI * radius * radius;
+				document.getElementById("someParagraph").innerHTML= "Area is: " + area;	
+			}
+		
+		}		
+
+
+	</script>
+
+</body>
+
+</html>
